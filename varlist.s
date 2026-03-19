@@ -8,7 +8,7 @@
 * first, then arrays (soon)      *
 **********************************
 
-               DSK   VARLIST#060300 ; Type = 06 (bin), Aux = 0300 (org)
+               DSK   VARLIST        ; Type = 06 (bin), Aux = 0300 (org)
                TYP   BIN
                ORG   $300
 

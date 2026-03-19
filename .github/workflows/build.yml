@@ -40,7 +40,6 @@ jobs:
       # Now you can use it to create a new bootable ProDOS disk
       - name: Create Boot Volume
         run: |
-          cadius
           cadius createvolume varlist.po VARLIST 140KB
           cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.2/PRODOS
           cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.2/BASIC.SYSTEM
