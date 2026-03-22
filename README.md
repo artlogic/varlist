@@ -6,7 +6,9 @@ Lists defined Applesoft variables.
 
 Build with [Merlin 32](https://brutaldeluxe.fr/products/crossdevtools/merlin/): `merlin32 varlist.s`
 
-You can then use [Cadius](https://brutaldeluxe.fr/products/crossdevtools/cadius/index.html) to add to an existing ProDOS disk image: `cadius addfile dev.po /DEV/ VARLIST\#060300`
+You can then use [Cadius](https://github.com/mach-kernel/cadius) to add to an existing ProDOS disk image: `cadius addfile dev.po /DEV/ VARLIST\#060300`
+
+Make sure you are using the latest versions of both Merlin32 and Cadius.
 
 ## Using
 
