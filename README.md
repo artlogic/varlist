@@ -4,15 +4,26 @@ Lists defined Applesoft variables.
 
 ## Building
 
-Build with [Merlin 32](https://brutaldeluxe.fr/products/crossdevtools/merlin/): `merlin32 varlist.s`
+Build with [Merlin 32](https://brutaldeluxe.fr/products/crossdevtools/merlin/): `merlin32 [path to macros] varlist.s`
 
 You can then use [Cadius](https://brutaldeluxe.fr/products/crossdevtools/cadius/index.html) to add to an existing ProDOS disk image: `cadius addfile dev.po /DEV/ VARLIST\#060300`
 
 ## Using
 
-You can either `BLOAD VARLIST` and `CALL 768` or `BRUN VARLIST`. Output consists of defined variables, so if you don't have any, there's no output.
+You can either `BLOAD VARLIST` and `CALL 768` or `BRUN VARLIST`. Output consists of defined variables, so if you don't have any, there's no output. It should work from within a running program without disrupting the program execution.
 
-This does include some 65C02 specific instructions and so will only work in systems with that CPU.
+The output looks like this:
+
+```
+A=1.23
+A%=123
+A$=HELLO WORLD
+A()=FN
+```
+
+In the case of A()=FN, this is a `DEF FN`. This version does not display the function variable or body. A future version may support this.
+
+This should work on any Apple II, but it's only been tested on a IIe.
 
 ## TODO
 
