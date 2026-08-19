@@ -43,9 +43,7 @@ jobs:
       - name: Create Boot Volume
         run: |
           cadius createvolume varlist.po VARLIST 140KB
-          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.2/PRODOS
-          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.2/BASIC.SYSTEM
-          ls
-          cat _FileInformation.txt
+          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.3/PRODOS
+          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.3/BASIC.SYSTEM
           cadius addfile varlist.po /VARLIST/ VARLIST
           cadius catalog varlist.po
