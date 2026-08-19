@@ -25,11 +25,11 @@ jobs:
 
       # This will install Merlin32 on your Github Runner machine
       - name: Install Merlin32
-        uses: digarok/install-merlin32-action@master
+        uses: digarok/install-merlin32-action@main
 
       # This will install Cadius on your Github Runner machine
       - name: Install Cadius
-        uses: digarok/install-cadius-action@v0.2
+        uses: digarok/install-cadius-action@main
         with:
           include_prodos: true
           version: 1.4.5
