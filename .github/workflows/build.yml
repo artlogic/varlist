@@ -29,7 +29,7 @@ jobs:
 
       # This will install Cadius on your Github Runner machine
       - name: Install Cadius
-        uses: digarok/install-cadius-action@master
+        uses: digarok/install-cadius-action@v0.2
         with:
           include_prodos: true
           version: 1.4.5
