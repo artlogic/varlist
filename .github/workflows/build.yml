@@ -45,7 +45,7 @@ jobs:
           cadius createvolume varlist.po VARLIST 140KB
           ls -al
           ls -al ./PRODOS.2.4.3/
-          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.3/PRODOS
-          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.3/BASIC.SYSTEM
-          cadius addfile varlist.po /VARLIST/ VARLIST
+          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.3/PRODOS#FF0000
+          cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.3/BASIC.SYSTEM#FF0000
+          cadius addfile varlist.po /VARLIST/ VARLIST#060300
           cadius catalog varlist.po
