@@ -32,6 +32,8 @@ jobs:
         uses: digarok/install-cadius-action@master
         with:
           include_prodos: true
+          version: 1.4.5
+          source: mach-kernel
 
       # Now you can use it to assemble your source code
       - name: Assembly Step
