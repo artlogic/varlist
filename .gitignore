@@ -1,0 +1,7 @@
+# ignore merlin32 outputs
+VARLIST#060300
+VARLIST_S*.txt
+_FileInformation.txt
+
+# ignore test disk images
+*.po
