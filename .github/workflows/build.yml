@@ -2,11 +2,15 @@
 
 name: Build Disk Image
 
+permissions:
+  contents: write
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
+    tags: [ "v*.*.*" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -47,3 +51,18 @@ jobs:
           cadius addfile varlist.po /VARLIST/ ./PRODOS.2.4.3/BASIC.SYSTEM#FF0000
           cadius addfile varlist.po /VARLIST/ VARLIST#060300
           cadius addfile varlist.po /VARLIST/ assets/MAKEVARS#FC0801
+
+      - name: Create GitHub release and upload assets
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ ! "$GITHUB_REF_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Skipping release: tag '$GITHUB_REF_NAME' does not match vN.N.N"
+            exit 0
+          fi
+
+          gh release create "$GITHUB_REF_NAME" \
+            "varlist.po" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes
